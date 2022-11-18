@@ -1,34 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <h3 align="center">TITLE</h3>
+  <p align="center">SHORT DESCRIPTION</p>
+</div>
 
-## Getting Started
+## About The Project
 
-First, run the development server:
+WHY CREATED
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Here's why:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- REASON 1
+- REASON 2
+- REASON 3
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Built With
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- [Major Framework](url)
+- [Major Framework](url)
+- [Major Framework](url)
+- [Major Library](url)
+- [Major Library](url)
+- [Major Library](url)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Features
 
-## Learn More
+FEATURE 1
+FEATURE 2
+FEATURE 3
+FEATURE 4
+FEATURE 5
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+These are the things you need to use the software and how to install them.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- THING 1
+- THING 2
+- THING 3
 
-## Deploy on Vercel
+### Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. `git clone PROJECTLINK`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. `cd PROJECTDIRECTORY`
+
+3. `virtualenv venv`
+
+4. `. venv/bin/activate`
+
+5. `pip3 install -r requirements.txt`
+
+## Usage
+
+CODE EXAMPLES
+
+For more examples, please refer to the [Documentation](LINK)
+
+## Roadmap
+
+- [] FEATURE 1
+- [] FEATURE 2
+- [] FEATURE 3
+
+See the [open issues](LINK) for a full list of proposed features (and known issues).
+
+## Contributing
+
+Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+## Contact
+
+NAME - EMAIL - Project Link: [link_to_repo](link_to_repo)
+
+## Acknowledgments
+
+- [Acknowledgement 1](url)
+- [Acknowledgement 2](url)
+- [Acknowledgement 3](url)
