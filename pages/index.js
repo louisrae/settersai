@@ -1,34 +1,26 @@
-import {
-  ChatBubbleBottomCenterIcon,
-  UsersIcon,
-} from "@heroicons/react/24/outline";
+import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
+import React from "react";
 
-const navigation = [
-  { name: "Contacts", href: "#", icon: UsersIcon, current: true },
-  { name: "Chat", href: "#", icon: ChatBubbleBottomCenterIcon, current: false },
-];
+const login = () => {
+  const { data: session } = useSession();
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
-export default function Example() {
-  return (
-    <>
+  if (session) {
+    return (
       <div>
-        <div className="flex flex-1 flex-col md:pl-64">
-          <div className="sticky top-0 z-10 bg-gray-100 pl-1 pt-1 sm:pl-3 sm:pt-3 md:hidden"></div>
-          <main className="flex-1">
-            <div className="py-6">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                <button className="text-2xl font-semibold text-gray-900">
-                  Please sign in
-                </button>
-              </div>
-            </div>
-          </main>
-        </div>
+        <p>Welcome</p>
+        <Link href={"/contacts"}>Access App</Link>
+        <br></br>
+        <button onClick={() => signOut()}> Sign Out</button>
       </div>
-    </>
-  );
-}
+    );
+  } else {
+    return (
+      <div>
+        <p>You are not signed in.</p>
+        <button onClick={() => signIn()}>Sign In</button>
+      </div>
+    );
+  }
+};
+export default login;
