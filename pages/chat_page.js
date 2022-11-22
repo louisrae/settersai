@@ -1,8 +1,8 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import ChatList from "../../components/ChatList";
-import Sidebar from "../../components/Sidebar";
+import ChatList from "../components/ChatList";
+import Sidebar from "../components/Sidebar";
 
 const our_messages = [
   {
