@@ -1,9 +1,9 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 import ChatArea from "../components/ChatArea";
-
 import ChatList from "../components/ChatList";
 import MessageList from "../components/MessageList";
+
 import Sidebar from "../components/Sidebar";
 
 const our_messages = [
@@ -38,9 +38,9 @@ const Chat = () => {
   if (status === "authenticated") {
     return (
       <>
-        <div class="w-full h-screen">
-          <div class="flex h-full">
-            <Sidebar />
+        <Sidebar></Sidebar>
+        <div className="flex flex-1 flex-col md:pl-64">
+          <main className="flex-1">
             <div class="flex-1 bg-gray-100 w-full h-full">
               <div class="main-body container m-auto w-11/12 h-full flex flex-col">
                 <div class="main flex-1 flex flex-col">
@@ -56,7 +56,7 @@ const Chat = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </main>
         </div>
       </>
     );
