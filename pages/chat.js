@@ -1,68 +1,181 @@
-import Sidebar from "../components/Sidebar";
-
 import { useSession } from "next-auth/react";
 import React from "react";
+import ChatList from "../components/ChatList";
+import Sidebar from "../components/Sidebar";
 
-const Example = () => {
+const our_messages = [
+  {
+    recent_message:
+      "Hey there. We would like to invite you over to our office for a visit. How about it?",
+  },
+  {
+    recent_message: "All travel expenses are covered by us of course :D",
+  },
+  {
+    recent_message:
+      "Hey there. We would like to invite you over to our office for a visit. How about it?",
+  },
+  {
+    recent_message: "All travel expenses are covered by us of course :D",
+  },
+  {
+    recent_message:
+      "Hey there. We would like to invite you over to our office for a visit. How about it?",
+  },
+  {
+    recent_message: "All travel expenses are covered by us of course :D",
+  },
+  {
+    recent_message:
+      "Hey there. We would like to invite you over to our office for a visit. How about it?",
+  },
+  {
+    recent_message: "All travel expenses are covered by us of course :D",
+  },
+];
+const their_messages = [
+  {
+    recent_message: "It's like a dream come true",
+  },
+  {
+    recent_message: "I accept. Thank you very much.",
+  },
+  {
+    recent_message: "It's like a dream come true",
+  },
+];
+
+const Chat = () => {
   const { data: session, status } = useSession({ required: true });
   if (status === "authenticated") {
     return (
       <>
-        <Sidebar></Sidebar>
-        <div className="flex flex-1 flex-col md:pl-64">
-          <div className="sticky top-0 z-10 bg-gray-100 pl-1 pt-1 sm:pl-3 sm:pt-3 md:hidden"></div>
-          <main className="flex-1">
-            <div className="py-6">
-              <div className="px-4 sm:px-6 lg:px-8">
-                <div className="sm:flex sm:items-center">
-                  <div className="sm:flex-auto">
-                    <h1 className="text-xl font-semibold text-gray-900">
-                      Conversations
-                    </h1>
-                    <p className="mt-2 text-sm text-gray-700">
-                      A list of all the active conversations (recently updated)
-                    </p>
+        <div class="w-full h-screen">
+          <div class="flex h-full">
+            <div class="hidden xl:block sm:flex-2 w-64 bg-gray-200">
+              <Sidebar />
+            </div>
+            <div class="flex-1 bg-gray-100 w-full h-full">
+              <div class="main-body container m-auto w-11/12 h-full flex flex-col">
+                <div class="main flex-1 flex flex-col">
+                  <div class="hidden lg:block heading flex-2">
+                    <h1 class="text-3xl text-gray-700 mb-4">Chat</h1>
                   </div>
-                  <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-                    <input
-                      id="mobile-search"
-                      className="block w-full rounded-md border border-gray bg-gray bg-opacity-20 py-2 pl-10 pr-3 leading-5 text-gray-900 placeholder-gray focus:border-transparent  sm:text-sm"
-                      placeholder="Search for contact"
-                      type="search"
-                      name="search"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-8 flex flex-col">
-                  <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div className="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-                      <div className="min-h-screen bg-gray-100">
-                        <div className="py-6">
-                          <div className="mx-auto max-w-3xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-8 lg:px-8">
-                            <div className="hidden lg:col-span-3 lg:block xl:col-span-2">
-                              <div
-                                aria-label="Sidebar"
-                                className="sticky top-6 divide-y divide-gray-300 text-center"
-                              >
-                                Contacts
+                  <div class="flex-1 flex h-full">
+                    <div class="sidebar hidden lg:flex w-1/3 flex-2 flex-col pr-6">
+                      <ChatList />
+                    </div>
+                    <div class="chat-area flex-1 flex flex-col">
+                      <div class="flex-3">
+                        <h2 class="text-xl py-1 mb-8 border-b-2 border-gray-200">
+                          Conversation
+                        </h2>
+                      </div>
+                      <div class="messages flex-1 overflow-auto">
+                        {/* Test messaging */}
+                        {our_messages.map((message) => (
+                          <div class="message mb-4 flex">
+                            <div class="flex-2">
+                              <div class="w-12 h-12 relative"></div>
+                            </div>
+                            <div class="flex-1 px-2">
+                              <div class="inline-block bg-gray-300 rounded-full p-2 px-6 text-gray-700">
+                                <span>{message.recent_message}</span>
+                              </div>
+                              <div class="pl-4">
+                                <small class="text-gray-500">15 April</small>
                               </div>
                             </div>
-                            <main className="lg:col-span-9 xl:col-span-6 text-center">
-                              Conversations
-                            </main>
                           </div>
-                        </div>
+                        ))}
+                        {/* end messaging */}
+                        {their_messages.map((message) => (
+                          <div class="message me mb-4 flex text-right">
+                            <div class="flex-1 px-2">
+                              <div class="inline-block bg-blue-600 rounded-full p-2 px-6 text-white">
+                                <span>{message.recent_message}</span>
+                              </div>
+                              <div class="pr-4">
+                                <small class="text-gray-500">15 April</small>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
+
+                      <form>
+                        <label for="chat" class="sr-only">
+                          Your message
+                        </label>
+                        <div class="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700">
+                          <button
+                            type="button"
+                            class="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="w-6 h-6"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                                clip-rule="evenodd"
+                              ></path>
+                            </svg>
+                          </button>
+                          <button
+                            type="button"
+                            class="p-2 text-gray-500 rounded-lg cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="w-6 h-6"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
+                                clip-rule="evenodd"
+                              ></path>
+                            </svg>
+                          </button>
+                          <textarea
+                            id="chat"
+                            rows="4"
+                            class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Your message..."
+                          ></textarea>
+                          <button
+                            type="submit"
+                            class="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100 dark:text-blue-500 dark:hover:bg-gray-600"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="w-6 h-6 rotate-90"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+                            </svg>
+                            <span class="sr-only">Send message</span>
+                          </button>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </main>
+          </div>
         </div>
       </>
     );
   }
 };
-export default Example;
+export default Chat;
