@@ -1,47 +1,32 @@
 import { useSession } from "next-auth/react";
 import React from "react";
-import ChatList from "../components/ChatList";
-import Sidebar from "../components/Sidebar";
+
+import ChatList from "../../components/ChatList";
+import Sidebar from "../../components/Sidebar";
 
 const our_messages = [
   {
-    recent_message:
-      "Hey there. We would like to invite you over to our office for a visit. How about it?",
-  },
-  {
-    recent_message: "All travel expenses are covered by us of course :D",
+    recent_message: "Lr",
+    date_sent: "15 April",
   },
   {
     recent_message:
       "Hey there. We would like to invite you over to our office for a visit. How about it?",
-  },
-  {
-    recent_message: "All travel expenses are covered by us of course :D",
-  },
-  {
-    recent_message:
-      "Hey there. We would like to invite you over to our office for a visit. How about it?",
-  },
-  {
-    recent_message: "All travel expenses are covered by us of course :D",
-  },
-  {
-    recent_message:
-      "Hey there. We would like to invite you over to our office for a visit. How about it?",
-  },
-  {
-    recent_message: "All travel expenses are covered by us of course :D",
+    date_sent: "16 April",
   },
 ];
 const their_messages = [
   {
     recent_message: "It's like a dream come true",
+    date_sent: "17 April",
   },
   {
     recent_message: "I accept. Thank you very much.",
+    date_sent: "18 April",
   },
   {
     recent_message: "It's like a dream come true",
+    date_sent: "19 April",
   },
 ];
 
@@ -55,24 +40,20 @@ const Chat = () => {
             <div class="hidden xl:block sm:flex-2 w-64 bg-gray-200">
               <Sidebar />
             </div>
+
             <div class="flex-1 bg-gray-100 w-full h-full">
               <div class="main-body container m-auto w-11/12 h-full flex flex-col">
                 <div class="main flex-1 flex flex-col">
-                  <div class="hidden lg:block heading flex-2">
-                    <h1 class="text-3xl text-gray-700 mb-4">Chat</h1>
-                  </div>
+                  <div class="hidden lg:block heading flex-2 mb-5"></div>
                   <div class="flex-1 flex h-full">
-                    <div class="sidebar hidden lg:flex w-1/3 flex-2 flex-col pr-6">
+                    <div class="sidebar hidden lg:flex w-1/3 flex-2 flex-col pr-6 ">
                       <ChatList />
                     </div>
                     <div class="chat-area flex-1 flex flex-col">
-                      <div class="flex-3">
-                        <h2 class="text-xl py-1 mb-8 border-b-2 border-gray-200">
-                          Conversation
-                        </h2>
+                      <div class="flex-3 py-5 mb-8 border-b-2 border-gray-200">
+                        <h1>Louis-Rae</h1>
                       </div>
                       <div class="messages flex-1 overflow-auto">
-                        {/* Test messaging */}
                         {our_messages.map((message) => (
                           <div class="message mb-4 flex">
                             <div class="flex-2">
@@ -83,35 +64,29 @@ const Chat = () => {
                                 <span>{message.recent_message}</span>
                               </div>
                               <div class="pl-4">
-                                <small class="text-gray-500">15 April</small>
+                                <small class="text-gray-500">
+                                  {message.date_sent}
+                                </small>
                               </div>
                             </div>
                           </div>
                         ))}
-                        {/* end messaging */}
                         {their_messages.map((message) => (
                           <div class="message me mb-4 flex text-right">
                             <div class="flex-1 px-2">
                               <div class="inline-block bg-blue-600 rounded-full p-2 px-6 text-white">
-                                <span>{message.recent_message}</span>
+                                {message.recent_message}
                               </div>
-                              <div class="pr-4">
-                                <small class="text-gray-500">15 April</small>
+                              <div class="pr-4 text-gray-500">
+                                <small>{message.date_sent}</small>
                               </div>
                             </div>
                           </div>
                         ))}
                       </div>
-
                       <form>
-                        <label for="chat" class="sr-only">
-                          Your message
-                        </label>
                         <div class="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700">
-                          <button
-                            type="button"
-                            class="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                          >
+                          <button class="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
                             <svg
                               aria-hidden="true"
                               class="w-6 h-6"
@@ -126,10 +101,7 @@ const Chat = () => {
                               ></path>
                             </svg>
                           </button>
-                          <button
-                            type="button"
-                            class="p-2 text-gray-500 rounded-lg cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                          >
+                          <button class="p-2 text-gray-500 rounded-lg cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
                             <svg
                               aria-hidden="true"
                               class="w-6 h-6"
@@ -145,7 +117,6 @@ const Chat = () => {
                             </svg>
                           </button>
                           <textarea
-                            id="chat"
                             rows="4"
                             class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Your message..."
@@ -163,7 +134,6 @@ const Chat = () => {
                             >
                               <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
                             </svg>
-                            <span class="sr-only">Send message</span>
                           </button>
                         </div>
                       </form>
