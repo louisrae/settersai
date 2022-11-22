@@ -9,7 +9,7 @@ const navigation = [
   { name: "Contacts", href: "/contacts", icon: UsersIcon },
   {
     name: "Chat",
-    href: "/chat_page",
+    href: "/chat",
     icon: ChatBubbleBottomCenterIcon,
   },
 ];
