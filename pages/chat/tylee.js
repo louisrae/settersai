@@ -16,7 +16,7 @@ const Chat = () => {
             <div class="hidden xl:block sm:flex-2 w-64 bg-gray-200">
               <Sidebar></Sidebar>
             </div>
-            3
+
             <main className="flex-1">
               <div class="flex-1 bg-gray-100 w-full h-full">
                 <div class="main-body container m-auto w-11/12 h-full flex flex-col">

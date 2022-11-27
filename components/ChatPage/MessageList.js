@@ -1,31 +1,27 @@
-const m_list = [
+const conversation_sid = [
   {
-    recent_message:
-      "Hey there. We would like to invite you over to our office for a visit. How about it?",
-    date_sent: "15 April",
-    we_sent: true,
+    Body: "Please fucking work",
+    Direction: "outbound-api",
+    SentDate: 1668716597000,
+    Sid: "SM5b1153b8779bc670f900e6c65888ef62",
+    Status: "delivered",
+    To: "+17025391284",
   },
   {
-    recent_message:
-      "Hey there. We would like to invite you over to our office for a visit. How about it?",
-    date_sent: "16 April",
-    we_sent: true,
-  },
-
-  {
-    recent_message: "It's like a dream come true",
-    date_sent: "17 April",
-    we_sent: false,
+    Body: "Get off it mate ",
+    Direction: "inbound",
+    SentDate: 1668716629000,
+    Sid: "SMf8b2944f539dcb04ad8d45b0b9e6facc",
+    Status: "received",
+    To: "+17174938126",
   },
   {
-    recent_message: "I accept. Thank you very much.",
-    date_sent: "18 April",
-    we_sent: false,
-  },
-  {
-    recent_message: "It's like a dream come true",
-    date_sent: "19 April",
-    we_sent: false,
+    Body: "Thank fuck",
+    Direction: "outbound-api",
+    SentDate: 1668716636000,
+    Sid: "SMb050c409a013221a6d8a9458df3f6c7e",
+    Status: "delivered",
+    To: "+17025391284",
   },
 ];
 
@@ -37,10 +33,10 @@ export default function MessageList() {
           <h1>Conversation</h1>
         </div>
 
-        {m_list.map((message) => (
+        {conversation_sid.map((message) => (
           <div
             className={
-              message.we_sent === true
+              message.Status !== "delivered"
                 ? "message me mb-4 flex"
                 : "message me mb-4 flex text-right"
             }
@@ -48,19 +44,19 @@ export default function MessageList() {
             <div class="flex-1 px-2">
               <div
                 className={
-                  message.we_sent === true
+                  message.Status !== "delivered"
                     ? "inline-block bg-gray-300 rounded-full p-2 px-6 text-gray-700"
                     : "inline-block bg-blue-600 rounded-full p-2 px-6 text-white"
                 }
               >
-                {message.recent_message}
+                {message.Body}
               </div>
               <div
                 className={
-                  message.we_sent === true ? "pl-4" : "pr-4 text-gray-500"
+                  message.Status !== "delivered" ? "pl-4" : "pr-4 text-gray-500"
                 }
               >
-                <small class="text-gray-500">{message.date_sent}</small>
+                <small class="text-gray-500">{message.SentDate}</small>
               </div>
             </div>
           </div>
