@@ -1,6 +1,4 @@
-import ChatArea from "./ChatPage/ChatArea";
 import ChatList from "./ChatPage/ChatList";
-import MessageList from "./ChatPage/MessageList";
 import Sidebar from "./Sidebar";
 
 export default function ChatUi() {
@@ -18,10 +16,7 @@ export default function ChatUi() {
                   <div class="sidebar hidden lg:flex w-1/3 flex-2 flex-col pr-6 ">
                     <ChatList />
                   </div>
-                  <div class="chat-area flex-1 flex flex-col">
-                    <MessageList></MessageList>
-                    <ChatArea></ChatArea>
-                  </div>
+                  <div class="chat-area flex-1 flex flex-col"></div>
                 </div>
               </div>
             </div>
