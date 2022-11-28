@@ -7,7 +7,13 @@ export default function MessageList({ message_data }) {
         </div>
 
         {message_data.map((message) => (
-          <div class="message me mb-2 flex">
+          <div
+            className={
+              message.prospect !== 0
+                ? "message me mb-2 flex"
+                : "message me mb-2 flex text-right"
+            }
+          >
             <div class="flex-1 px-2">
               <div
                 className={
