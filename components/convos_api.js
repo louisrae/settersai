@@ -112,6 +112,48 @@ export const caycee_sid = [
     date: "2022-11-23 18:04:03+00:00",
     prospect: 0,
   },
+  {
+    body: "Would you like to set aside some time to speak with me so we can learn more about you and see if we can help?",
+    date: "2022-11-23 18:04:03+00:00",
+    prospect: 0,
+  },
+  {
+    body: "Would you like to set aside some time to speak with me so we can learn more about you and see if we can help?",
+    date: "2022-11-23 18:04:03+00:00",
+    prospect: 0,
+  },
+
+  {
+    body: "Would you like to set aside some time to speak with me so we can learn more about you and see if we can help?",
+    date: "2022-11-23 18:04:03+00:00",
+    prospect: 0,
+  },
+  {
+    body: "Would you like to set aside some time to speak with me so we can learn more about you and see if we can help?",
+    date: "2022-11-23 18:04:03+00:00",
+    prospect: 0,
+  },
+  {
+    body: "Would you like to set aside some time to speak with me so we can learn more about you and see if we can help?",
+    date: "2022-11-23 18:04:03+00:00",
+    prospect: 0,
+  },
+  {
+    body: "Would you like to set aside some time to speak with me so we can learn more about you and see if we can help?",
+    date: "2022-11-23 18:04:03+00:00",
+    prospect: 0,
+  },
+
+  {
+    body: "Would you like to set aside some time to speak with me so we can learn more about you and see if we can help?",
+    date: "2022-11-23 18:04:03+00:00",
+    prospect: 0,
+  },
+  {
+    body: "Would you like to set aside some time to speak with me so we can learn more about you and see if we can help?",
+    date: "2022-11-23 18:04:03+00:00",
+    prospect: 0,
+  },
 ];
 
 export const lr_sid = [
@@ -120,21 +162,7 @@ export const lr_sid = [
     date: "2022-11-23 16:01:20+00:00",
     prospect: 0,
   },
-  {
-    body: "Possible thyroid disease ",
-    date: "2022-11-23 16:03:46+00:00",
-    prospect: 1,
-  },
-  {
-    body: "Celiac, Iron Deficient anemia, malabsorption ",
-    date: "2022-11-23 16:03:55+00:00",
-    prospect: 1,
-  },
-  {
-    body: "Possible thyroid disease ",
-    date: "2022-11-23 16:04:35+00:00",
-    prospect: 1,
-  },
+
   {
     body: "Celiac, Iron Deficient anemia, malabsorption ",
     date: "2022-11-23 16:04:36+00:00",
@@ -382,6 +410,174 @@ export const meta_sid = [
       date_sent: "2022-11-25 16:01:20+00:00",
       recent_message: "Good",
       chat_link: "/chat/amanda",
+      active: false,
+    },
+    message_data: [
+      {
+        body: "Hey Caycee,\n\nAustin here from Dr Maggie's team\n\nI saw you just joined our Transform Autoimmune Diseases group and I'm wondering what made you join\n\nWhat are the biggest health struggles you are working through right now?",
+        date: "2022-11-23 16:01:20+00:00",
+        prospect: 0,
+      },
+      {
+        body: "Possible thyroid disease ",
+        date: "2022-11-23 16:03:46+00:00",
+        prospect: 1,
+      },
+    ],
+  },
+  {
+    meta_data: {
+      full_name: "Louis-Rae",
+      date_sent: "2022-11-29 16:01:20+00:00",
+      recent_message: "Yes",
+      chat_link: "/chat/lr",
+      active: false,
+    },
+    message_data: [
+      {
+        body: "Hey Caycee,\n\nAustin here from Dr Maggie's team\n\nI saw you just joined our Transform Autoimmune Diseases group and I'm wondering what made you join\n\nWhat are the biggest health struggles you are working through right now?",
+        date: "2022-11-23 16:01:20+00:00",
+        prospect: 0,
+      },
+      {
+        body: "Possible thyroid disease ",
+        date: "2022-11-23 16:03:46+00:00",
+        prospect: 1,
+      },
+    ],
+  },
+  {
+    meta_data: {
+      full_name: "Louis-Rae",
+      date_sent: "2022-11-29 16:01:20+00:00",
+      recent_message: "Yes",
+      chat_link: "/chat/lr",
+      active: false,
+    },
+    message_data: [
+      {
+        body: "Hey Caycee,\n\nAustin here from Dr Maggie's team\n\nI saw you just joined our Transform Autoimmune Diseases group and I'm wondering what made you join\n\nWhat are the biggest health struggles you are working through right now?",
+        date: "2022-11-23 16:01:20+00:00",
+        prospect: 0,
+      },
+      {
+        body: "Possible thyroid disease ",
+        date: "2022-11-23 16:03:46+00:00",
+        prospect: 1,
+      },
+    ],
+  },
+  {
+    meta_data: {
+      full_name: "Louis-Rae",
+      date_sent: "2022-11-29 16:01:20+00:00",
+      recent_message: "Yes",
+      chat_link: "/chat/lr",
+      active: false,
+    },
+    message_data: [
+      {
+        body: "Hey Caycee,\n\nAustin here from Dr Maggie's team\n\nI saw you just joined our Transform Autoimmune Diseases group and I'm wondering what made you join\n\nWhat are the biggest health struggles you are working through right now?",
+        date: "2022-11-23 16:01:20+00:00",
+        prospect: 0,
+      },
+      {
+        body: "Possible thyroid disease ",
+        date: "2022-11-23 16:03:46+00:00",
+        prospect: 1,
+      },
+    ],
+  },
+  {
+    meta_data: {
+      full_name: "Louis-Rae",
+      date_sent: "2022-11-29 16:01:20+00:00",
+      recent_message: "Yes",
+      chat_link: "/chat/lr",
+      active: false,
+    },
+    message_data: [
+      {
+        body: "Hey Caycee,\n\nAustin here from Dr Maggie's team\n\nI saw you just joined our Transform Autoimmune Diseases group and I'm wondering what made you join\n\nWhat are the biggest health struggles you are working through right now?",
+        date: "2022-11-23 16:01:20+00:00",
+        prospect: 0,
+      },
+      {
+        body: "Possible thyroid disease ",
+        date: "2022-11-23 16:03:46+00:00",
+        prospect: 1,
+      },
+    ],
+  },
+  {
+    meta_data: {
+      full_name: "Louis-Rae",
+      date_sent: "2022-11-29 16:01:20+00:00",
+      recent_message: "Yes",
+      chat_link: "/chat/lr",
+      active: false,
+    },
+    message_data: [
+      {
+        body: "Hey Caycee,\n\nAustin here from Dr Maggie's team\n\nI saw you just joined our Transform Autoimmune Diseases group and I'm wondering what made you join\n\nWhat are the biggest health struggles you are working through right now?",
+        date: "2022-11-23 16:01:20+00:00",
+        prospect: 0,
+      },
+      {
+        body: "Possible thyroid disease ",
+        date: "2022-11-23 16:03:46+00:00",
+        prospect: 1,
+      },
+    ],
+  },
+  {
+    meta_data: {
+      full_name: "Louis-Rae",
+      date_sent: "2022-11-29 16:01:20+00:00",
+      recent_message: "Yes",
+      chat_link: "/chat/lr",
+      active: false,
+    },
+    message_data: [
+      {
+        body: "Hey Caycee,\n\nAustin here from Dr Maggie's team\n\nI saw you just joined our Transform Autoimmune Diseases group and I'm wondering what made you join\n\nWhat are the biggest health struggles you are working through right now?",
+        date: "2022-11-23 16:01:20+00:00",
+        prospect: 0,
+      },
+      {
+        body: "Possible thyroid disease ",
+        date: "2022-11-23 16:03:46+00:00",
+        prospect: 1,
+      },
+    ],
+  },
+  {
+    meta_data: {
+      full_name: "Louis-Rae",
+      date_sent: "2022-11-29 16:01:20+00:00",
+      recent_message: "Yes",
+      chat_link: "/chat/lr",
+      active: false,
+    },
+    message_data: [
+      {
+        body: "Hey Caycee,\n\nAustin here from Dr Maggie's team\n\nI saw you just joined our Transform Autoimmune Diseases group and I'm wondering what made you join\n\nWhat are the biggest health struggles you are working through right now?",
+        date: "2022-11-23 16:01:20+00:00",
+        prospect: 0,
+      },
+      {
+        body: "Possible thyroid disease ",
+        date: "2022-11-23 16:03:46+00:00",
+        prospect: 1,
+      },
+    ],
+  },
+  {
+    meta_data: {
+      full_name: "Louis-Rae",
+      date_sent: "2022-11-29 16:01:20+00:00",
+      recent_message: "Yes",
+      chat_link: "/chat/lr",
       active: false,
     },
     message_data: [

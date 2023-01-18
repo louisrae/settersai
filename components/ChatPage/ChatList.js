@@ -12,7 +12,7 @@ export default function ChatList() {
           placeholder="Search"
         />
       </div>
-      <div class="flex-1 overflow-auto px-2">
+      <div class="overflow-y-scroll h-3/4">
         {meta_sid.map((person) => (
           <Link
             className={

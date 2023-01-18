@@ -1,9 +1,8 @@
+import ChatArea from "../../components/ChatPage/ChatArea";
 import ChatList from "../../components/ChatPage/ChatList";
 import MessageList from "../../components/ChatPage/MessageList";
-import Sidebar from "../../components/Sidebar";
-
-import ChatArea from "../../components/ChatPage/ChatArea";
 import { caycee_sid } from "../../components/convos_api";
+import Sidebar from "../../components/Sidebar";
 
 export default function ChatUi() {
   return (

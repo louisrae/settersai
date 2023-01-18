@@ -1,11 +1,10 @@
 export default function MessageList({ message_data }) {
   return (
     <>
-      <div class="chat-area flex-1 flex flex-col">
-        <div class="flex-3 py-5 mb-8 border-b-2 border-gray-200">
-          <h1>Conversation</h1>
-        </div>
-
+      <div class="flex-3 py-5 mb-8 border-b-2 border-gray-200">
+        <h1>Conversation</h1>
+      </div>
+      <div class="overflow-y-scroll h-96">
         {message_data.map((message) => (
           <div
             className={
