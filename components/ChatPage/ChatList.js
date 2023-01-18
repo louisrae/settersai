@@ -12,27 +12,27 @@ export default function ChatList() {
           placeholder="Search"
         />
       </div>
-      <div class="overflow-y-scroll h-3/4">
+      <div class="overflow-y-scroll h-96">
         {meta_sid.map((person) => (
           <Link
             className={
               person.meta_data.active === true
-                ? "entry cursor-pointer transform hover:scale-105 duration-300 transition-transform bg-white mb-1 rounded p-4 flex shadow-md border-b-2 border-red-300"
-                : "entry cursor-pointer transform hover:scale-105 duration-300 transition-transform bg-white mb-1 rounded p-4 flex shadow-md"
+                ? "entry cursor-pointer transform hover:bg-blue-200 duration-300 transition-transform bg-white mb-1 rounded p-4 flex shadow-md border-b-2 border-blue-300"
+                : "entry cursor-pointer transform hover:bg-blue-200 duration-300 transition-transform bg-white mb-1 rounded p-4 flex shadow-md"
             }
             href={person.meta_data.chat_link}
           >
-            <div class="flex-1 px-2">
-              <div class="truncate w-32">
+            <div class="flex-1">
+              <div class="truncate w-36">
                 <span class="text-gray-800">{person.meta_data.full_name}</span>
               </div>
-              <div>
+              <div class="truncate w-44">
                 <small class="text-gray-600">
                   {person.meta_data.recent_message}
                 </small>
               </div>
             </div>
-            <div class="flex-2 text-right">
+            <div class="text-right truncate w-20">
               <div>
                 <small class="text-gray-500">
                   {person.meta_data.date_sent}

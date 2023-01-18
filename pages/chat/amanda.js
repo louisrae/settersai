@@ -16,7 +16,7 @@ export default function ChatUi() {
             <div class="main-body container m-auto w-11/12 h-full flex flex-col">
               <div class="main flex-1 flex flex-col">
                 <div class="flex-1 flex h-full">
-                  <div class="sidebar hidden lg:flex w-1/3 flex-2 flex-col pr-6 ">
+                  <div class="sidebar hidden lg:flex w-1/3 flex-2 flex-col pr-6">
                     <ChatList />
                   </div>
                   <div class="chat-area flex-1 flex flex-col">

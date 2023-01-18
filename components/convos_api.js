@@ -368,7 +368,7 @@ export const meta_sid = [
       date_sent: "2022-11-23 16:01:20+00:00",
       recent_message: "Yes",
       chat_link: "/chat/pat",
-      active: false,
+      active: true,
     },
     message_data: [
       {
@@ -599,7 +599,7 @@ export const meta_sid = [
       date_sent: "2022-11-29 16:01:20+00:00",
       recent_message: "Yes",
       chat_link: "/chat/lr",
-      active: false,
+      active: true,
     },
     message_data: [
       {
