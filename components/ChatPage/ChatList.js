@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { meta_sid } from "../convos_api";
 
-export default function ChatList() {
+const ChatList = (props) => {
   return (
     <>
       <div class="search flex-2 pb-6 px-2">
@@ -44,4 +44,6 @@ export default function ChatList() {
       </div>
     </>
   );
-}
+};
+
+export default ChatList;

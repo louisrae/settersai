@@ -18,7 +18,7 @@ export default function MessageList({ message_data }) {
                 className={
                   message.prospect !== 0
                     ? "inline-block bg-gray-300 rounded-full p-2 px-6 text-gray-700"
-                    : "inline-block bg-blue-600 rounded-full p-2 px-6 text-white"
+                    : "inline-block bg-blue-500 rounded-full p-2 px-6 text-white"
                 }
               >
                 {message.body}

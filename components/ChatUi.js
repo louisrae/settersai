@@ -36,7 +36,7 @@ const tylee_sid = [
     ],
   },
 ];
-export default function ChatUi() {
+export default function ChatUi(props) {
   return (
     <div class="w-full h-screen">
       <div class="flex h-full">
