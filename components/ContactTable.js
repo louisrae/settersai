@@ -30,13 +30,13 @@ export default function ContactTable({ contact }) {
         {contact.map((person) => (
           <tr>
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-              {person.f_name}
+              {person.first_name}
             </td>
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-              {person.l_name}
+              {person.last_name}
             </td>
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-              {person.phone}
+              {person.phone_num}
             </td>
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
               {person.email}
@@ -45,7 +45,7 @@ export default function ContactTable({ contact }) {
               {person.created}
             </td>
             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-              {person.tag}
+              {person.tags}
             </td>
             <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
               <a href="#" className="text-indigo-600 hover:text-indigo-900">

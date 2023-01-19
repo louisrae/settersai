@@ -59,7 +59,7 @@ const Contacts = (props) => {
 };
 
 export async function getServerSideProps() {
-  const allUsers = await prisma.api_maggiecontacts.findMany();
+  const allUsers = await prisma.limbic_contacts.findMany();
   return {
     props: {
       data: JSON.parse(

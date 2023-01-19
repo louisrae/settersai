@@ -1,10 +1,12 @@
+import { PrismaClient } from "@prisma/client";
 import ChatArea from "../../components/ChatPage/ChatArea";
 import ChatList from "../../components/ChatPage/ChatList";
 import MessageList from "../../components/ChatPage/MessageList";
-import { amanda_sid } from "../../components/convos_api";
 import Sidebar from "../../components/Sidebar";
 
-export default function ChatUi() {
+const prisma = new PrismaClient();
+
+export default function ChatUi(props) {
   return (
     <div class="w-full h-screen">
       <div class="flex h-full">
@@ -20,7 +22,7 @@ export default function ChatUi() {
                     <ChatList />
                   </div>
                   <div class="chat-area flex-1 flex flex-col">
-                    <MessageList message_data={amanda_sid}></MessageList>
+                    <MessageList message_data={props.data}></MessageList>
                     <ChatArea></ChatArea>
                   </div>
                 </div>
@@ -31,4 +33,18 @@ export default function ChatUi() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const all_messages = await prisma.limbic_messages.findMany();
+
+  return {
+    props: {
+      data: JSON.parse(
+        JSON.stringify(all_messages, (key, value) =>
+          typeof value === "bigint" ? value.toString() : value
+        )
+      ),
+    },
+  };
 }

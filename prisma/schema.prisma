@@ -7,16 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model api_maggiecontacts {
-  id      BigInt   @id @default(autoincrement())
-  f_name  String   @db.VarChar(50)
-  l_name  String   @db.VarChar(50)
-  phone   String   @db.VarChar(75)
-  email   String   @db.VarChar(255)
-  created DateTime @db.Date
-  tag     String   @db.VarChar(255)
-}
-
 model auth_group {
   id                     Int                      @id @default(autoincrement())
   name                   String                   @unique @db.VarChar(150)
@@ -94,16 +84,6 @@ model auth_user_user_permissions {
   @@index([user_id], map: "auth_user_user_permissions_user_id_a95ead1b")
 }
 
-model crm_app_maggiecontacts {
-  id      BigInt   @id @default(autoincrement())
-  f_name  String   @db.VarChar(50)
-  l_name  String   @db.VarChar(50)
-  phone   String   @db.VarChar(75)
-  email   String   @db.VarChar(255)
-  created DateTime @db.Date
-  tag     String   @db.VarChar(255)
-}
-
 model django_admin_log {
   id                  Int                  @id @default(autoincrement())
   action_time         DateTime             @db.Timestamptz(6)
@@ -146,23 +126,57 @@ model django_session {
   @@index([session_key], map: "django_session_session_key_c0390e0f_like")
 }
 
-model team {
-  team_id    String @id
-  fname      String
-  lname      String
-  work_email String
+model blog_booklist {
+  id             BigInt   @id @default(autoincrement())
+  book_title     String
+  author         String
+  read_again     Boolean
+  notes          String
+  highlights     String   @db.VarChar(200)
+  date_finished  DateTime @db.Date
+  rating         Int
+  goodreads_link String   @db.VarChar(200)
+  format_read    String
+  times_read     Int
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
-model test_message_data {
-  index        BigInt?
-  Conversation String?
-  Sender       String?
-  Date         String?
-  Message      String?
-  Prospect     String?
-  Platform     String?
+model blog_devlog {
+  id      BigInt   @id @default(autoincrement())
+  month   DateTime @db.Date
+  content String
+}
 
-  @@index([index], map: "ix_test_message_data_index")
-  @@ignore
+model blog_essaypost {
+  id          BigInt   @id @default(autoincrement())
+  title       String
+  subtitle    String
+  content     String
+  create_date DateTime @db.Timestamptz(6)
+  slug        String   @db.VarChar(50)
+
+  @@index([slug], map: "blog_essaypost_slug_29fd6204")
+  @@index([slug], map: "blog_essaypost_slug_29fd6204_like")
+}
+
+model limbic_messages {
+  id           Int       @id @default(autoincrement())
+  from_        String
+  to_          String
+  body         String?
+  status       String?
+  sent_date    DateTime? @db.Timestamp(6)
+  message_sid  String?
+  direction    String?
+  conversation String?
+  prospect     String?
+}
+
+model limbic_contacts {
+  contact_id Int       @id @default(autoincrement())
+  first_name String?
+  last_name  String?
+  phone_num  String?
+  email      String?
+  created    DateTime? @db.Timestamp(6)
+  tags       String?
 }
