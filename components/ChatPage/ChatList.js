@@ -3,6 +3,7 @@ import Link from "next/link";
 import { meta_sid } from "../convos_api";
 
 const ChatList = (props) => {
+  console.log(props);
   return (
     <>
       <div class="search flex-2 pb-6 px-2">

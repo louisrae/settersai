@@ -1,11 +1,9 @@
 import ChatList from "../../components/ChatPage/ChatList";
-import MessageList from "../../components/ChatPage/MessageList";
 import Sidebar from "../../components/Sidebar";
 
 import ChatArea from "../../components/ChatPage/ChatArea";
-import { pat_sid } from "../../components/convos_api";
 
-export default function ChatUi() {
+export default function ChatUi(props) {
   return (
     <div class="w-full h-screen">
       <div class="flex h-full">
@@ -21,7 +19,45 @@ export default function ChatUi() {
                     <ChatList />
                   </div>
                   <div class="chat-area flex-1 flex flex-col">
-                    <MessageList message_data={pat_sid}></MessageList>
+                    <>
+                      <div class="flex-3 py-5 mb-8 border-b-2 border-gray-200">
+                        <h1>Conversation</h1>
+                      </div>
+                      <div class="overflow-y-scroll h-96">
+                        {props.data.map((message) => (
+                          <div
+                            className={
+                              message.prospect !== "0"
+                                ? "message me mb-2 flex"
+                                : "message me mb-2 flex text-right"
+                            }
+                          >
+                            <div class="flex-1 px-2">
+                              <div
+                                className={
+                                  message.prospect !== "0"
+                                    ? "inline-block bg-gray-300 rounded-full p-2 px-6 text-gray-700"
+                                    : "inline-block bg-blue-500 rounded-full p-2 px-6 text-white"
+                                }
+                              >
+                                {message.body}
+                              </div>
+                              <div
+                                className={
+                                  message.prospect !== "0"
+                                    ? "pl-4"
+                                    : "pr-4 text-gray-500"
+                                }
+                              >
+                                <small class="text-gray-500">
+                                  {message.date}
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </>
                     <ChatArea></ChatArea>
                   </div>
                 </div>
@@ -32,4 +68,16 @@ export default function ChatUi() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(
+    "http://127.0.0.1:8000/message_list?number=+13152649680"
+  );
+  const data1 = await res.json();
+  const data = JSON.parse(data1);
+
+  // Pass data to the page via props
+  return { props: { data } };
 }
