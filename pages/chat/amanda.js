@@ -73,7 +73,7 @@ export default function ChatUi(props) {
 export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch(
-    "http://127.0.0.1:8000/message_list?number=+19064588379"
+    "http://127.0.0.1:8000/message_list?number=+15096908774"
   );
   const data1 = await res.json();
   const data = JSON.parse(data1);
